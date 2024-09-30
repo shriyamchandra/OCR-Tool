@@ -1,6 +1,6 @@
-# OCR and Document Search Web Application Prototype
+## Live Application link
 
-![OCR Application](https://user-images.githubusercontent.com/your-repo/image.png) *(Replace with your application screenshot)*
+https://shriyamchandra-ocr-tool-app-j0apqb.streamlit.app/
 
 ## Table of Contents
 
