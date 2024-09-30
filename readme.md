@@ -47,5 +47,5 @@ Follow these steps to set up the project locally:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/ocr-document-search-app.git
+   https://github.com/shriyamchandra/OCR-Tool.git
    cd ocr-document-search-app
