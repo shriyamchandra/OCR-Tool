@@ -8,14 +8,6 @@ https://shriyamchandra-ocr-tool-app-j0apqb.streamlit.app/
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [Live Demo](#live-demo)
-- [Examples](#examples)
-- [Assumptions](#assumptions)
-- [Future Enhancements](#future-enhancements)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
 
 ## Project Overview
 
