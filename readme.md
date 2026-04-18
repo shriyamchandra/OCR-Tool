@@ -1,43 +1,101 @@
-## Live Application link
+# 📝 Enhanced OCR Tool
 
-https://shriyamchandra-ocr-tool-app-j0apqb.streamlit.app/
+A web-based OCR application that extracts text from images containing **Hindi** and **English** text, with intelligent layout detection and keyword search.
 
-## Table of Contents
+## Live Demo
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-
-## Project Overview
-
-This project is a web-based prototype that demonstrates the ability to perform Optical Character Recognition (OCR) on uploaded images containing text in both **Hindi** and **English**. The application not only extracts text from images but also provides a keyword search functionality to help users quickly find relevant information within the extracted text. The prototype is developed using **Streamlit** and **EasyOCR**, and it is deployed online for easy accessibility.
+🔗 [https://shriyamchandra-ocr-tool-app-j0apqb.streamlit.app/](https://shriyamchandra-ocr-tool-app-j0apqb.streamlit.app/)
 
 ## Features
 
-- **Image Upload:** Users can upload images in common formats such as JPEG, PNG, BMP, and TIFF.
-- **OCR Processing:** Extracts text from uploaded images containing Hindi and English languages.
-- **Layout Detection:** Automatically detects the layout of the text (single-column, multi-column, table) to optimize OCR accuracy.
-- **Text Highlighting:** Highlights detected text regions within the image for visual confirmation.
-- **Keyword Search:** Allows users to search for keywords within the extracted text, supporting both plain text and regex-based searches.
-- **Download Extracted Text:** Users can download the extracted text as a `.txt` file for offline use.
+- **Image Upload** — Supports JPEG, PNG, BMP, and TIFF formats
+- **Layout Detection** — Automatically detects single-column, multi-column, and table layouts
+- **Bilingual OCR** — Extracts Hindi and English text using EasyOCR
+- **Visual Feedback** — Draws green bounding boxes around detected text regions
+- **Keyword Search** — Plain text and regex search with highlighted results
+- **Download** — Export extracted text as a `.txt` file
+- **Hindi Numeral Conversion** — Automatically converts Devanagari numerals to English
 
-## Technologies Used
+## Screenshots
 
-- **Python 3.8+**
-- **Streamlit:** For building the web application interface.
-- **EasyOCR:** For performing Optical Character Recognition.
-- **OpenCV:** For image processing and layout detection.
-- **Pillow:** For image handling.
-- **NumPy:** For numerical operations.
-- **Base64 & IO:** For encoding and handling download functionalities.
+| Uploaded Image | Processed Output |
+|:-:|:-:|
+| ![Upload](Output/Screenshot%202024-09-30%20223743.png) | ![Processed](Output/Screenshot%202024-09-30%20223819.png) |
+
+![Search Results](Output/Screenshot%202024-09-30%20223905.png)
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Python 3.8+** | Core language |
+| **Streamlit** | Web UI framework |
+| **EasyOCR** | Optical Character Recognition engine |
+| **OpenCV** | Image processing and layout detection |
+| **Pillow** | Image loading and format handling |
+| **NumPy** | Array operations |
+| **PyTorch** | GPU auto-detection for EasyOCR |
+
+## Project Structure
+
+```
+OCR-Tool/
+├── app.py                  # Streamlit UI entry point
+├── ocr/
+│   ├── __init__.py
+│   ├── reader.py           # EasyOCR wrapper with GPU auto-detection
+│   ├── preprocessing.py    # Shared image preprocessing (Otsu threshold)
+│   ├── layout.py           # Layout detection (single/multi-column, table)
+│   └── processors.py       # OCR processing for each layout type
+├── utils/
+│   ├── __init__.py
+│   └── text.py             # Numeral conversion, HTML sanitization, search
+├── assets/                 # Screenshot assets
+├── Output/                 # Sample output screenshots
+├── requirements.txt        # Pinned dependencies
+├── .gitignore
+└── README.md
+```
 
 ## Installation
 
-Follow these steps to set up the project locally:
+### 1. Clone the Repository
 
-1. **Clone the Repository:**
+```bash
+git clone https://github.com/shriyamchandra/OCR-Tool.git
+cd OCR-Tool
+```
 
-   ```bash
-   https://github.com/shriyamchandra/OCR-Tool.git
-   cd ocr-document-search-app
+### 2. Create a Virtual Environment (recommended)
+
+```bash
+python -m venv venv
+source venv/bin/activate   # macOS/Linux
+# venv\Scripts\activate    # Windows
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Application
+
+```bash
+streamlit run app.py
+```
+
+The app will open at [http://localhost:8501](http://localhost:8501).
+
+## Usage
+
+1. **Upload** an image via the sidebar file uploader
+2. **View** the original and processed images side by side
+3. **Read** the extracted text below the images
+4. **Search** for keywords using the search bar (supports regex)
+5. **Download** the extracted text as a `.txt` file
+
+## License
+
+This project is open source. See [LICENSE](LICENSE) for details.
